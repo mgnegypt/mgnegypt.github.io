@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mgneg.baladeno",
+      "sha256_cert_fingerprints": [
+        "6C:8B:41:88:7B:5F:83:6B:7C:1A:4F:DC:41:D6:01:5D:49:E7:1D:23:04:84:1A:6D:DE:D5:16:AE:08:5A:D1:D2"
+      ]
+    }
+  }
+]

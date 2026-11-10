@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بلدينو — خدمات بلدك.. أقرب ليك</title>
+<meta name="description" content="خدمة على بلدينو — افتحها في التطبيق أو نزّل التطبيق عشان تشوف التفاصيل.">
+<meta property="og:title" content="بلدينو — خدمات بلدك.. أقرب ليك">
+<meta property="og:description" content="خدمة على بلدينو — افتحها في التطبيق أو نزّل التطبيق عشان تشوف التفاصيل.">
+<meta property="og:image" content="https://mgnegypt.github.io/logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="/logo.png">
+<style>
+  body { margin:0; font-family: system-ui, "Segoe UI", Tahoma, sans-serif; background:#FFF8EC; color:#2B2118; }
+  .wrap { max-width:520px; margin:0 auto; padding:40px 20px; text-align:center; }
+  img.logo { width:72px; height:72px; border-radius:18px; }
+  img.cover { width:100%; max-height:320px; object-fit:cover; border-radius:18px; margin-top:18px; display:none; }
+  h1 { font-size:24px; margin:16px 0 6px; }
+  .cat { font-size:15px; color:#8A6D4F; margin:0 0 8px; }
+  p.note { font-size:15px; line-height:1.7; color:#5C4A38; }
+  a.btn { display:block; margin:14px auto 0; max-width:320px; padding:14px 20px; border-radius:14px;
+          background:#E8710A; color:#fff; font-size:17px; font-weight:700; text-decoration:none; }
+  a.btn.secondary { background:#fff; color:#B25A08; border:2px solid #E8710A; }
+  #status { font-size:15px; color:#8A6D4F; margin-top:14px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="/logo.png" alt="بلدينو">
+    <img class="cover" id="cover" alt="">
+    <h1 id="title">خدمة على بلدينو</h1>
+    <p class="cat" id="category"></p>
+    <p class="note" id="status">بنحمّل بيانات الخدمة…</p>
+    <a class="btn" id="openApp" href="#">افتح في التطبيق</a>
+    <a class="btn secondary" href="https://github.com/mgnegypt/baladeno-releases/releases/latest">نزّل التطبيق</a>
+  </div>
+<script>
+  (function () {
+    var parts = location.pathname.split("/").filter(function (p) { return p.length > 0; });
+    var id = (parts[0] === "service" && parts[1]) ? parts[1] : null;
+    var status = document.getElementById("status");
+    var openBtn = document.getElementById("openApp");
+    if (!id) {
+      status.textContent = "الرابط ده مش مظبوط. افتح التطبيق ودوّر على الخدمة من جوّه.";
+      openBtn.style.display = "none";
+      return;
+    }
+    openBtn.href = "baladeno://service/" + encodeURIComponent(id);
+    fetch("https://mzahqbwutcmfxdtyiihr.supabase.co/functions/v1/service-preview?id=" + encodeURIComponent(id))
+      .then(function (r) { if (!r.ok) throw new Error("nf"); return r.json(); })
+      .then(function (s) {
+        document.title = s.title + " — بلدينو";
+        document.getElementById("title").textContent = s.title;
+        if (s.category) document.getElementById("category").textContent = s.category;
+        if (s.image) {
+          var img = document.getElementById("cover");
+          img.src = s.image;
+          img.style.display = "block";
+        }
+        status.textContent = "دي خدمة على بلدينو. افتحها في التطبيق عشان تشوف التفاصيل وبيانات التواصل.";
+      })
+      .catch(function () {
+        document.getElementById("title").textContent = "الخدمة مش موجودة";
+        status.textContent = "الخدمة دي مش متاحة دلوقتي — يمكن اتشالت. افتح التطبيق ودوّر على خدمات تانية قريبة منك.";
+      });
+  })();
+</script>
+</body>
+</html>
