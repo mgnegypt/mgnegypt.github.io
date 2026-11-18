@@ -1,0 +1,407 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+  <defs>
+    <!-- Outer Map Pin Gradient -->
+    <linearGradient id="pinBorderGrad" x1="500" y1="115" x2="500" y2="855" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#025d45"/>
+      <stop offset="22%" stop-color="#014438"/>
+      <stop offset="60%" stop-color="#01312b"/>
+      <stop offset="100%" stop-color="#002623"/>
+    </linearGradient>
+
+    <!-- Warm Sky Gradient -->
+    <linearGradient id="skyWarmGrad" x1="550" y1="148" x2="450" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fde3b2"/>
+      <stop offset="55%" stop-color="#fee8bf"/>
+      <stop offset="100%" stop-color="#feefd0"/>
+    </linearGradient>
+
+    <!-- Sun Gradient -->
+    <linearGradient id="sunGrad" x1="540" y1="196" x2="625" y2="348" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fea62d"/>
+      <stop offset="50%" stop-color="#fe9524"/>
+      <stop offset="100%" stop-color="#fe861e"/>
+    </linearGradient>
+
+    <!-- Distant Sand Dune Gradient -->
+    <linearGradient id="duneGrad" x1="580" y1="385" x2="580" y2="510" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fee3b1"/>
+      <stop offset="100%" stop-color="#fcd590"/>
+    </linearGradient>
+
+    <!-- Left Green Hill Gradient -->
+    <linearGradient id="leftHillGrad" x1="310" y1="482" x2="310" y2="540" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#48a850"/>
+      <stop offset="100%" stop-color="#197843"/>
+    </linearGradient>
+
+    <!-- Dome Base Lit Gradient (Right side of Dome) -->
+    <linearGradient id="domeRightGrad" x1="542" y1="440" x2="612" y2="490" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fede9e"/>
+      <stop offset="45%" stop-color="#fec66c"/>
+      <stop offset="100%" stop-color="#fcb24b"/>
+    </linearGradient>
+
+    <!-- Dome Shaded Crescent (Left side of Dome) -->
+    <linearGradient id="domeLeftGrad" x1="518" y1="442" x2="565" y2="490" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e3b265"/>
+      <stop offset="50%" stop-color="#daa659"/>
+      <stop offset="100%" stop-color="#cf9b4e"/>
+    </linearGradient>
+
+    <!-- Building 1 Left Wall (Shaded) -->
+    <linearGradient id="b1LeftWallGrad" x1="515" y1="490" x2="515" y2="565" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e4be7d"/>
+      <stop offset="40%" stop-color="#dab06b"/>
+      <stop offset="100%" stop-color="#cd9e55"/>
+    </linearGradient>
+
+    <!-- Building 1 Right Wall (Sunlit) -->
+    <linearGradient id="b1RightWallGrad" x1="590" y1="490" x2="590" y2="572" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fee6b4"/>
+      <stop offset="45%" stop-color="#fdd998"/>
+      <stop offset="100%" stop-color="#fbc66d"/>
+    </linearGradient>
+
+    <!-- Building 2 Front Wall (Left-facing lit) -->
+    <linearGradient id="b2FrontWallGrad" x1="685" y1="458" x2="685" y2="558" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f7e6bd"/>
+      <stop offset="55%" stop-color="#f5d897"/>
+      <stop offset="100%" stop-color="#f2c879"/>
+    </linearGradient>
+
+    <!-- Building 2 Side Wall (Right-facing shaded) -->
+    <linearGradient id="b2SideWallGrad" x1="725" y1="458" x2="725" y2="558" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e0b063"/>
+      <stop offset="60%" stop-color="#d49f51"/>
+      <stop offset="100%" stop-color="#c68f42"/>
+    </linearGradient>
+
+    <!-- Golden Orange Sand Slope on Right -->
+    <linearGradient id="sandSlopeGrad" x1="585" y1="548" x2="715" y2="625" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fec556"/>
+      <stop offset="45%" stop-color="#fda830"/>
+      <stop offset="100%" stop-color="#f0921c"/>
+    </linearGradient>
+
+    <!-- Foreground Left Field 1 (Bright green to deep green) -->
+    <linearGradient id="fieldL1Grad" x1="285" y1="565" x2="455" y2="775" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3c9d4e"/>
+      <stop offset="32%" stop-color="#5bb155"/>
+      <stop offset="68%" stop-color="#19894c"/>
+      <stop offset="100%" stop-color="#016945"/>
+    </linearGradient>
+
+    <!-- Foreground Left Field 2 (Mid-emerald green beside river) -->
+    <linearGradient id="fieldL2Grad" x1="330" y1="550" x2="535" y2="780" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#18864b"/>
+      <stop offset="28%" stop-color="#026d4b"/>
+      <stop offset="75%" stop-color="#016f4d"/>
+      <stop offset="100%" stop-color="#015841"/>
+    </linearGradient>
+
+    <!-- River Left Highlight Band (Light sky-blue) -->
+    <linearGradient id="riverLightGrad" x1="260" y1="542" x2="565" y2="755" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#87d5fb"/>
+      <stop offset="25%" stop-color="#abe1fe"/>
+      <stop offset="65%" stop-color="#88d4fc"/>
+      <stop offset="100%" stop-color="#50bcf9"/>
+    </linearGradient>
+
+    <!-- River Right Main Band (Richer azure blue) -->
+    <linearGradient id="riverBlueGrad" x1="275" y1="542" x2="585" y2="745" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#68c6fa"/>
+      <stop offset="45%" stop-color="#78cbfc"/>
+      <stop offset="80%" stop-color="#54befa"/>
+      <stop offset="100%" stop-color="#38aef7"/>
+    </linearGradient>
+
+    <!-- Right Bank Green Field (Field R1) -->
+    <linearGradient id="fieldR1Grad" x1="395" y1="530" x2="650" y2="665" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#349f55"/>
+      <stop offset="38%" stop-color="#0b8251"/>
+      <stop offset="78%" stop-color="#026c4c"/>
+      <stop offset="100%" stop-color="#015941"/>
+    </linearGradient>
+
+    <!-- Inner Map Pin Clip Path -->
+    <clipPath id="innerPinClip">
+      <path d="M 500,148
+               C 651,148 771,270 771,422
+               C 771,528 712,621 593,735
+               C 558,769 528,795 509,810
+               C 503,815 495,815 489,810
+               C 470,795 440,769 405,735
+               C 286,621 229,528 229,422
+               C 229,270 349,148 500,148 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- 1. OUTER MAP PIN BODY -->
+  <path d="M 500,117
+           C 668,117 803,253 803,422
+           C 803,540 737,643 606,768
+           C 568,805 536,834 517,848
+           C 506,856 492,856 481,848
+           C 462,834 430,805 392,768
+           C 261,643 196,540 196,422
+           C 196,253 332,117 500,117 Z"
+        fill="url(#pinBorderGrad)"/>
+
+  <!-- 2. CLIPPED INNER SCENE -->
+  <g clip-path="url(#innerPinClip)">
+    <!-- Base Pale Cream Sky / Cloud Layer -->
+    <rect x="190" y="140" width="620" height="450" fill="#fef8ea"/>
+
+    <!-- Upper Warm Peach Sky Shape (with soft cloud puffs on left and wave on right) -->
+    <path d="M 285,145
+             L 775,145
+             L 775,322
+             C 735,314 695,340 650,358
+             C 605,375 558,362 520,315
+             C 495,284 484,254 452,256
+             C 432,257 418,268 408,262
+             C 392,232 355,216 320,226
+             C 295,233 278,248 265,260
+             Z"
+          fill="url(#skyWarmGrad)"/>
+
+    <!-- Mid-Sky Warm Glow behind Palm & Sun -->
+    <path d="M 225,310
+             C 275,295 340,305 405,345
+             C 460,378 510,415 575,405
+             C 635,395 695,355 775,375
+             L 775,495
+             L 225,495 Z"
+          fill="#fef4dc" opacity="0.65"/>
+
+    <!-- Distant Golden Sand Dune (Right & Center Background) -->
+    <path d="M 445,422
+             C 475,422 505,438 532,442
+             C 565,418 612,386 658,386
+             C 700,386 740,405 775,425
+             L 775,530
+             L 430,530 Z"
+          fill="url(#duneGrad)"/>
+
+    <!-- Soft Left Horizon Haze behind Green Hills -->
+    <path d="M 225,415
+             C 285,405 350,425 425,455
+             L 425,535
+             L 225,535 Z"
+          fill="#fdedc4"/>
+
+    <!-- Orange Sun -->
+    <circle cx="583" cy="272" r="75.5" fill="url(#sunGrad)"/>
+
+    <!-- Left Bright Green Rolling Hills (Behind Palm Trunk) -->
+    <path d="M 225,515
+             C 245,498 270,483 292,483
+             C 315,483 335,498 355,512
+             C 368,506 380,504 392,504
+             C 405,504 418,510 428,522
+             L 428,545
+             L 225,545 Z"
+          fill="url(#leftHillGrad)"/>
+
+    <!-- Mid-Dark Green Bush (Between Palm Trunk and Building 1) -->
+    <path d="M 392,532
+             C 394,519 403,514 416,514
+             C 418,498 427,491 440,491
+             C 448,491 454,497 458,504
+             C 461,496 472,498 480,512
+             L 490,515
+             L 490,548
+             L 392,548 Z"
+          fill="#025241"/>
+
+    <!-- Dark Green Bush Tucked Behind Left Side of Building 1 & Dome -->
+    <path d="M 489,492
+             C 488,476 496,464 510,461
+             C 518,459 525,462 530,468
+             L 530,495
+             L 489,495 Z"
+          fill="#013d34"/>
+
+    <!-- Right Dark Green Trees Canopy (Behind Building 1 & Building 2) -->
+    <path d="M 610,475
+             C 612,458 622,451 638,451
+             C 642,434 655,426 670,427
+             C 674,427 676,428 678,427
+             C 683,411 696,403 712,404
+             C 715,404 717,404 719,402
+             C 726,394 738,392 750,396
+             C 762,400 772,410 778,422
+             L 778,555
+             L 610,555 Z"
+          fill="#013f37"/>
+
+    <!-- Dark Tree Shadow Core (Between Building 1 and Building 2) -->
+    <path d="M 610,475 L 675,475 L 675,555 L 610,555 Z" fill="#012e29"/>
+
+    <!-- PALM TREE (Exact Smooth Cubic Bezier Silhouette) -->
+    <path d="M 490.8,301.2 C 490.1,300.6 488.1,298.8 487.0,298.5 C 485.9,298.2 484.6,298.6 483.8,299.0 C 482.9,299.4 481.4,301.2 481.2,301.2 C 481.1,301.3 481.4,299.9 480.5,299.2 C 479.6,298.6 479.0,297.3 475.0,297.0 C 471.0,296.7 459.5,296.2 453.8,297.0 C 448.0,297.8 440.6,300.6 436.8,302.0 C 432.9,303.4 429.4,305.7 427.8,306.0 C 426.1,306.3 426.2,305.2 425.8,304.0 C 425.3,302.8 424.8,299.6 424.8,298.0 C 424.8,296.4 425.8,293.4 425.8,293.2 C 425.8,293.1 426.5,292.1 424.8,293.0 C 423.0,293.9 417.5,296.8 414.2,299.2 C 411.0,301.7 406.4,305.6 403.2,309.2 C 400.1,312.9 396.0,318.8 393.2,323.2 C 390.5,327.7 385.1,338.4 384.8,339.0 C 384.4,339.6 384.1,341.0 383.8,338.0 C 383.4,335.0 383.7,324.1 382.8,318.8 C 381.8,313.4 377.9,303.1 377.5,302.5 C 377.1,301.9 373.8,304.1 371.8,304.0 C 369.7,303.9 365.3,302.6 363.8,302.0 C 362.2,301.4 362.9,302.3 361.5,300.2 C 360.1,298.2 356.1,290.5 354.5,288.2 C 352.9,286.0 351.6,286.2 350.8,285.0 C 349.9,283.8 348.8,281.6 348.8,280.0 C 348.7,278.4 350.3,275.2 350.2,274.0 C 350.2,272.8 350.0,273.0 348.5,272.2 C 347.0,271.5 342.0,269.4 340.5,269.2 C 339.0,269.1 339.5,270.7 338.8,271.0 C 338.0,271.3 335.4,270.9 335.2,271.0 C 335.1,271.1 334.5,271.5 335.2,272.5 C 336.0,273.5 339.9,277.5 340.0,277.8 C 340.1,278.0 339.2,279.1 339.0,279.0 C 338.8,278.9 336.4,276.9 334.0,276.0 C 331.6,275.1 326.6,273.4 323.0,273.0 C 319.4,272.6 314.5,272.1 309.8,273.0 C 305.0,273.9 294.0,278.1 291.2,279.2 C 288.5,280.4 290.2,280.0 291.2,280.5 C 292.3,281.0 294.4,281.0 298.0,282.8 C 301.6,284.5 311.0,289.2 315.5,292.0 C 320.0,294.8 323.8,297.2 328.2,301.5 C 332.7,305.8 341.1,314.9 345.2,320.5 C 349.4,326.1 355.6,338.2 356.0,339.0 C 356.4,339.8 356.3,341.4 354.2,339.8 C 352.2,338.1 345.6,330.9 342.5,328.2 C 339.4,325.6 336.4,323.8 333.5,322.2 C 330.6,320.7 325.0,318.6 323.0,318.0 C 321.0,317.4 321.3,318.8 320.2,318.5 C 319.2,318.2 317.8,316.5 316.0,316.0 C 314.2,315.5 311.0,315.0 308.0,315.0 C 305.0,315.0 299.2,315.4 295.8,316.0 C 292.3,316.6 287.8,317.9 284.8,319.0 C 281.7,320.1 278.0,321.7 275.2,323.2 C 272.5,324.8 268.3,327.6 266.2,329.2 C 264.2,330.9 261.5,333.8 261.5,334.0 C 261.5,334.2 265.9,334.8 267.0,334.8 C 268.1,334.7 267.1,333.9 268.8,333.8 C 270.4,333.6 276.5,333.6 278.0,333.8 C 279.5,333.9 279.5,334.6 279.0,335.0 C 278.5,335.4 268.7,340.7 265.2,343.2 C 261.8,345.8 259.1,348.1 256.2,352.2 C 253.4,356.4 247.9,366.4 246.0,370.8 C 244.1,375.1 242.4,381.7 243.5,381.5 C 244.6,381.3 266.2,369.7 273.8,366.8 C 281.3,363.8 289.5,362.5 293.8,361.8 C 298.0,361.0 300.5,361.9 302.0,361.8 C 303.5,361.6 301.4,360.8 303.8,360.8 C 306.1,360.8 314.5,361.3 318.0,361.8 C 321.5,362.2 323.9,362.7 327.0,363.8 C 330.1,364.8 338.6,368.5 339.0,368.8 C 339.4,369.0 338.8,370.0 338.0,370.0 C 337.2,370.0 337.3,369.0 334.0,369.0 C 330.7,369.0 320.3,369.2 315.8,370.0 C 311.2,370.8 307.9,372.0 303.8,374.0 C 299.6,376.0 291.9,380.5 288.2,383.2 C 284.6,386.0 282.1,388.3 279.2,392.2 C 276.4,396.2 271.3,404.4 269.0,409.8 C 266.7,415.1 264.8,421.3 264.0,427.8 C 263.2,434.2 263.7,447.9 264.0,453.0 C 264.3,458.1 265.7,460.1 266.2,461.5 C 266.8,462.9 267.2,462.7 267.8,462.0 C 268.3,461.3 275.6,449.6 280.5,443.5 C 285.4,437.4 296.9,424.4 300.2,421.0 C 303.6,417.6 303.0,420.3 303.0,420.8 C 303.0,421.2 301.1,429.4 301.0,432.8 C 300.9,436.1 302.0,443.1 302.5,443.0 C 303.0,442.9 308.0,434.4 312.5,429.5 C 317.0,424.6 326.6,415.0 332.5,410.5 C 338.4,406.0 348.0,401.7 351.8,399.8 C 355.5,397.8 356.5,397.9 357.8,397.8 C 359.0,397.6 360.3,397.8 360.0,399.0 C 359.7,400.2 352.6,418.4 350.0,426.8 C 347.4,435.1 344.8,446.5 343.0,454.8 C 341.2,463.0 338.9,475.6 338.0,481.8 C 337.1,487.9 337.4,493.0 337.0,496.0 C 336.6,499.0 335.3,499.4 335.0,501.8 C 334.7,504.1 335.3,508.1 335.0,512.0 C 334.7,515.9 333.4,526.9 332.8,527.5 C 332.1,528.1 322.0,528.1 319.8,528.0 C 317.5,527.9 321.0,527.1 318.0,527.0 C 315.0,526.9 302.8,527.1 299.8,527.0 C 296.8,526.9 304.4,526.0 298.0,526.0 C 291.6,526.0 263.8,528.4 256.8,527.0 C 249.7,525.6 253.5,523.6 250.8,517.0 C 248.0,510.4 238.8,482.0 238.2,482.8 C 237.8,483.5 232.6,533.4 238.2,535.5 C 243.9,537.6 375.2,535.9 380.8,535.8 C 386.3,535.6 377.5,535.2 376.8,531.0 C 376.0,526.8 376.1,511.5 375.8,507.8 C 375.4,504.0 374.9,510.8 374.8,506.0 C 374.6,501.2 374.6,480.6 374.8,475.8 C 374.9,470.9 375.6,476.2 375.8,474.0 C 375.9,471.8 375.6,463.0 375.8,460.8 C 375.9,458.5 376.3,463.2 376.8,459.0 C 377.2,454.8 378.0,438.9 378.8,432.8 C 379.5,426.6 381.1,422.1 381.8,418.0 C 382.4,413.9 382.3,408.0 382.8,405.8 C 383.2,403.5 384.4,402.7 384.8,402.8 C 385.1,402.8 387.9,404.4 390.2,406.5 C 392.6,408.6 396.6,411.7 400.2,416.5 C 403.9,421.3 411.3,432.4 414.8,438.2 C 418.2,444.1 421.8,452.9 423.2,455.5 C 424.7,458.1 424.1,455.9 424.5,455.5 C 424.9,455.1 425.1,456.1 425.8,453.0 C 426.4,449.9 428.1,437.6 428.8,434.8 C 429.4,431.9 429.2,434.0 429.8,434.2 C 430.3,434.5 429.1,431.7 432.2,436.5 C 435.4,441.3 446.2,458.3 450.8,466.2 C 455.2,474.2 459.6,486.0 462.2,489.5 C 464.9,493.0 466.5,492.6 468.5,489.5 C 470.5,486.4 474.4,474.5 475.8,469.0 C 477.1,463.5 477.8,458.0 477.8,453.0 C 477.8,448.0 476.3,438.6 475.8,435.8 C 475.2,432.9 474.1,434.0 474.0,434.0 C 473.9,434.0 473.0,434.6 473.0,434.8 C 473.0,434.9 474.8,436.2 475.0,436.8 C 475.2,437.3 474.6,438.5 474.5,438.5 C 474.4,438.5 472.2,437.7 471.8,437.0 C 471.3,436.3 471.4,434.6 471.8,433.8 C 472.1,432.9 473.8,432.6 473.8,431.0 C 473.8,429.4 473.3,426.0 471.8,422.8 C 470.2,419.5 465.8,412.5 463.5,409.2 C 461.2,406.0 459.6,403.9 456.5,401.2 C 453.4,398.6 446.3,393.5 442.5,391.2 C 438.7,389.0 433.7,386.9 431.0,386.0 C 428.3,385.1 426.1,385.4 424.8,385.0 C 423.4,384.6 422.3,383.1 422.2,383.0 C 422.2,382.9 419.4,381.8 423.8,381.8 C 428.1,381.7 443.5,381.6 451.0,382.8 C 458.5,383.9 466.9,386.6 474.0,389.8 C 481.1,392.9 490.6,398.1 498.2,403.5 C 505.9,408.9 523.9,425.0 525.0,425.8 C 526.1,426.5 525.8,423.6 525.8,421.8 C 525.7,419.9 525.6,417.4 524.8,413.8 C 523.9,410.1 521.7,402.2 519.8,397.8 C 517.8,393.3 513.9,387.5 511.5,384.2 C 509.1,381.0 504.0,376.4 503.8,376.0 C 503.5,375.6 502.6,373.9 505.0,374.8 C 507.4,375.6 517.4,380.9 519.8,381.8 C 522.1,382.6 521.0,381.2 520.8,380.8 C 520.5,380.3 516.4,373.6 514.5,371.2 C 512.6,368.9 510.1,365.4 508.2,364.8 C 506.4,364.1 503.8,366.6 502.0,367.0 C 500.2,367.4 497.5,367.7 496.0,367.5 C 494.5,367.3 492.1,365.7 492.0,365.5 C 491.9,365.3 491.4,364.7 492.5,363.5 C 493.6,362.3 499.0,357.8 499.2,357.5 C 499.5,357.2 499.3,356.9 498.5,356.2 C 497.7,355.6 494.9,353.7 493.8,353.5 C 492.6,353.3 490.9,355.0 490.8,355.0 C 490.6,355.0 489.3,353.3 489.2,352.8 C 489.2,352.2 490.5,351.5 490.2,351.2 C 490.0,351.0 485.3,348.2 482.0,347.0 C 478.7,345.8 471.1,343.8 468.0,343.0 C 464.9,342.2 464.8,342.0 461.0,342.0 C 457.2,342.0 447.6,342.2 442.8,343.0 C 437.9,343.8 434.1,344.7 428.8,347.0 C 423.4,349.3 410.4,356.9 407.0,358.5 C 403.6,360.1 405.6,358.0 405.8,357.8 C 405.9,357.5 407.1,355.1 410.5,351.5 C 413.9,347.9 422.1,338.9 428.5,333.5 C 434.9,328.1 452.4,316.5 453.2,315.8 C 454.1,315.0 451.0,314.9 451.0,314.8 C 451.0,314.6 452.0,313.0 452.2,313.0 C 452.5,313.0 454.1,315.5 457.0,314.8 C 459.9,314.0 466.9,309.4 471.8,307.8 C 476.6,306.1 486.1,304.5 489.0,303.8 C 491.9,303.0 491.2,302.6 491.2,302.5 C 491.3,302.4 491.4,301.9 490.8,301.2 Z" fill="#01322d"/>
+
+    <!-- DOME OF BUILDING 1 -->
+    <!-- Full Dome Shape (Lit Golden Orange) -->
+    <path d="M 518,492
+             C 518,459 538,440 565,440
+             C 592,440 612,459 612,492
+             Z"
+          fill="url(#domeRightGrad)"/>
+    <!-- Dome Left Shaded Crescent (3D Lighting Effect) -->
+    <path d="M 518,492
+             C 518,459 538,440 565,440
+             C 548,447 548,468 566,492
+             Z"
+          fill="url(#domeLeftGrad)"/>
+    <!-- Bright Rim Highlight on Upper Right of Dome -->
+    <path d="M 565,440
+             C 591,440 611,458 612,490
+             C 607,464 589,446 565,442 Z"
+          fill="#fff0ca" opacity="0.7"/>
+
+    <!-- SMALL MIDDLE BACKGROUND BUILDING (Between Building 1 and Building 2) -->
+    <polygon points="640,525 658,524 658,562 640,562" fill="#bd944e"/>
+    <polygon points="658,524 676,525 676,562 658,562" fill="#f5cf87"/>
+    <rect x="646" y="535" width="6" height="11" rx="2" fill="#02342e"/>
+    <polygon points="647,502 664,502 664,515 647,515" fill="#d9ad60"/>
+
+    <!-- BUILDING 2 (Right Tall Adobe Tower) -->
+    <!-- Front-Left Sunlit Wall -->
+    <path d="M 658,485
+             C 658,481 661,478 665,477
+             L 682,475
+             L 682,467
+             C 682,463 685,461 689,460
+             L 711,458
+             L 711,558
+             L 658,558 Z"
+          fill="url(#b2FrontWallGrad)"/>
+    <!-- Right Shaded Side Wall (with stepped terrace on right) -->
+    <path d="M 711,458
+             L 732,461
+             C 737,462 740,466 740,472
+             L 740,502
+             L 756,503
+             L 756,558
+             L 711,558 Z"
+          fill="url(#b2SideWallGrad)"/>
+    <!-- Building 2 Upper Window (Left) -->
+    <rect x="673" y="486" width="11" height="18" rx="2.5" fill="#01312b"/>
+    <!-- Building 2 Lower Doorway (Right of Front Wall) -->
+    <rect x="683" y="521" width="15" height="34" rx="2" fill="#01312b"/>
+
+    <!-- BUILDING 1 (Foreground Left Domed Adobe Structure) -->
+    <!-- Left Shaded Wall -->
+    <polygon points="482,491 552,485 552,568 482,558" fill="url(#b1LeftWallGrad)"/>
+    <!-- Right Sunlit Wall -->
+    <polygon points="552,485 627,497 627,572 552,568" fill="url(#b1RightWallGrad)"/>
+    <!-- Crisp Cream Roof Cornice / Rim Highlight -->
+    <polygon points="482,491 552,485 627,497 627,502 552,491 482,496" fill="#fef6e1"/>
+    <polygon points="482,491 552,485 552,491 482,496" fill="#f3d89c"/>
+
+    <!-- Building 1 Left Window (with subtle recessed sill) -->
+    <rect x="508" y="516" width="15" height="24" rx="3" fill="#8f7244"/>
+    <rect x="508" y="516" width="13.5" height="23" rx="2.5" fill="#012e29"/>
+
+    <!-- Building 1 Right Archway Door (with recessed inner wall rim) -->
+    <path d="M 576,570
+             L 576,536
+             A 14.5,13.5 0 0 1 605,536
+             L 605,570 Z"
+          fill="#c49e5c"/>
+    <path d="M 576,570
+             L 576,536
+             A 13.5,13 0 0 1 603,536
+             L 603,570 Z"
+          fill="#012b27"/>
+
+    <!-- GOLDEN-ORANGE SAND DUNES / SLOPES ON RIGHT FOREGROUND -->
+    <!-- Upper Sand Slope at base of Building 2 -->
+    <path d="M 595,572
+             C 635,556 685,546 742,544
+             L 742,595
+             L 595,595 Z"
+          fill="#fec758"/>
+    <!-- Main Orange Sand Dune Slope -->
+    <path d="M 592,573
+             C 638,568 688,556 738,546
+             L 725,640
+             L 645,640 Z"
+          fill="url(#sandSlopeGrad)"/>
+
+    <!-- FOREGROUND FIELDS & RIVER -->
+    <!-- Base Dark Green Layer under all fields (forms the dark green stripes between fields) -->
+    <path d="M 220,524
+             C 340,524 475,545 615,595
+             L 705,650
+             L 510,825
+             L 220,825 Z"
+          fill="#01382f"/>
+
+    <!-- Right Bank Green Field (Field R1 - between River right bank and Building 1 / Sand Slope) -->
+    <path d="M 335,530
+             C 435,532 548,558 662,616
+             L 626,668
+             C 535,598 432,552 335,538 Z"
+          fill="url(#fieldR1Grad)"/>
+    <!-- Subtle brighter green upper edge on Field R1 -->
+    <path d="M 355,530
+             C 435,532 515,548 585,576
+             C 572,582 558,585 540,582
+             C 475,556 410,540 355,535 Z"
+          fill="#289552" opacity="0.75"/>
+
+    <!-- River Main Blue Channel -->
+    <path d="M 235,541
+             C 375,548 518,605 602,718
+             L 562,764
+             C 492,638 368,566 235,555 Z"
+          fill="url(#riverBlueGrad)"/>
+
+    <!-- River Left Highlight Band (Pale Ice Blue) -->
+    <path d="M 235,541
+             C 375,548 518,605 602,718
+             L 582,742
+             C 502,620 372,558 235,550 Z"
+          fill="url(#riverLightGrad)"/>
+
+    <!-- Soft Thin White Water Shimmer Line inside River -->
+    <path d="M 255,546
+             C 378,555 505,610 588,728"
+          fill="none" stroke="#d8f2ff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+
+    <!-- Left Field 2 (Mid-Emerald Band to the left of the River) -->
+    <path d="M 245,555
+             C 372,568 495,640 562,764
+             L 522,802
+             C 472,692 380,600 245,565 Z"
+          fill="url(#fieldL2Grad)"/>
+
+    <!-- Left Field 1 (Leftmost Bright Green Agricultural Terrace) -->
+    <path d="M 250,567
+             C 368,605 438,682 466,785
+             L 410,750
+             C 340,685 285,620 250,567 Z"
+          fill="url(#fieldL1Grad)"/>
+  </g>
+
+  <!-- 3. CRISP INNER PIN RING OVERLAY -->
+  <path d="M 500,117
+           C 668,117 803,253 803,422
+           C 803,540 737,643 606,768
+           C 568,805 536,834 517,848
+           C 506,856 492,856 481,848
+           C 462,834 430,805 392,768
+           C 261,643 196,540 196,422
+           C 196,253 332,117 500,117 Z
+           M 500,148
+           C 349,148 229,270 229,422
+           C 229,528 286,621 405,735
+           C 440,769 470,795 489,810
+           C 495,815 503,815 509,810
+           C 528,795 558,769 593,735
+           C 712,621 771,528 771,422
+           C 771,270 651,148 500,148 Z"
+        fill="url(#pinBorderGrad)" fill-rule="evenodd"/>
+</svg>
